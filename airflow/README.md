@@ -1,5 +1,5 @@
 # Airflow
-![Docker Hub](https://img.shields.io/badge/%20-DockerHub-blue?logo=docker&style=plastic)](https://hub.docker.com/r/tpopen/airflow)
+![Docker Hub](https://img.shields.io/badge/%20-DockerHub-blue?logo=docker&style=plastic)
 ![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/tpopen/airflow?sort=date&style=plastic)
 
 ## Overview
