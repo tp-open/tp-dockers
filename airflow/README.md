@@ -1,7 +1,3 @@
-Sure! Here's a cleaner, more polished version of your `README.md` that improves clarity, structure, and tone, while staying concise and direct:
-
----
-
 # Airflow
 
 ## Overview

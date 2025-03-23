@@ -7,7 +7,7 @@ on:
       - 'airflow/**'
 
 jobs:
-  build:
+  build-airflow:
     runs-on: ubuntu-latest
 
     steps:
