@@ -1,8 +1,11 @@
 # Airflow
+![Docker Hub](https://img.shields.io/badge/%20-DockerHub-blue?logo=docker&style=plastic)](https://hub.docker.com/r/tpopen/airflow)
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/tpopen/airflow?sort=date&style=plastic)
 
 ## Overview
 
-This custom Docker image extends the official [Apache Airflow](https://airflow.apache.org/) image with additional packages and functionality to enhance task execution and alerting.
+This custom Docker image extends the official [Apache Airflow](https://airflow.apache.org/) image with additional packages and functionality to enhance task execution and alerting.  
+
 📦 **Dockerfile** available at: [github.com/tp-open/tp-dockers/airflow](https://github.com/tp-open/tp-dockers/tree/master/airflow)
 
 ## Features
