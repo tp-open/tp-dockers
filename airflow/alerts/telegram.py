@@ -21,7 +21,7 @@ def task_failure_callback(context):
     try:
         requests.post(url, json=payload)
     except Exception as e:
-        logger.info(f"Telegram error: {e}")
+        logger.error(f"Telegram error: {e}")
 
 def task_success_callback(context):
     dag_id = context['dag'].dag_id
@@ -37,4 +37,4 @@ def task_success_callback(context):
     try:
         requests.post(url, json=payload)
     except Exception as e:
-        logger.info(f"Telegram error: {e}")
+        logger.error(f"Telegram error: {e}")
