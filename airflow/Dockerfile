@@ -5,11 +5,13 @@ USER root
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
     telnet \
+  && if ! getent group ${USER_ID} >/dev/null 2>&1; then \
+       groupadd -g ${USER_ID} airflow; \
+     fi \
   && if ! id -u airflow >/dev/null 2>&1; then \
        useradd -u ${USER_ID} -g ${USER_ID} -m -d /home/airflow -s /bin/bash airflow; \
      else \
-       usermod -u ${USER_ID} airflow 2>/dev/null || true; \
-       groupadd -g ${USER_ID} airflow 2>/dev/null || true; \
+       usermod -u ${USER_ID} -g ${USER_ID} airflow 2>/dev/null || true; \
      fi \
   && mkdir -p /opt/airflow /home/airflow \
   && chown -R ${USER_ID}:${USER_ID} /opt/airflow /home/airflow 2>/dev/null || true \
