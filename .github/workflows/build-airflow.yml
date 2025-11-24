@@ -37,4 +37,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: ${{ secrets.DOCKER_USERNAME }}/airflow
           readme-filepath: ./airflow/README.md
-          short-description: This custom Docker image extends the official Apache Airflow image with additional packages and functionality to enhance task execution and alerting.
+          short-description: Build from official Apache Airflow image with additional packages to enhance task execution and alerting.
