@@ -20,7 +20,7 @@ Set the following environment variables to enable Telegram notifications:
 
 | Variable         | Description                                                  |
 |------------------|--------------------------------------------------------------|
-| `TG_CHAT_TOKEN`  | Telegram bot token (from [BotFather](https://t.me/BotFather)) |
+| `TG_BOT_TOKEN`   | Telegram bot token (from [BotFather](https://t.me/BotFather)) |
 | `TG_CHAT_ID`     | Telegram chat ID (user or group)                             |
 
 ## Usage
@@ -30,8 +30,8 @@ Set the following environment variables to enable Telegram notifications:
 Send Telegram alerts on task success or failure:
 
 ```python
-from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.sdk import DAG
+from airflow.providers.standard.operators.python import PythonOperator
 from datetime import datetime, timedelta
 from alerts.telegram import task_failure_callback, task_success_callback
 
@@ -67,7 +67,7 @@ with DAG(
 Run a container as a task using the Docker operator:
 
 ```python
-from airflow import DAG
+from airflow.sdk import DAG
 from airflow.providers.docker.operators.docker import DockerOperator
 from datetime import datetime, timedelta
 

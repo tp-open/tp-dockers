@@ -9,8 +9,8 @@ logger = logging.getLogger(__name__)
 def task_failure_callback(context):
     dag_id = context['dag'].dag_id
     task_id = context['task_instance'].task_id
-    execution_date = context['execution_date']
-    message = f"❌ DAG: {dag_id}\nTask: {task_id}\nDate: {execution_date}\nStatus: FAILED"
+    logical_date = context['logical_date']
+    message = f"❌ DAG: {dag_id}\nTask: {task_id}\nDate: {logical_date}\nStatus: FAILED"
 
     url = f"https://api.telegram.org/bot{TG_BOT_TOKEN}/sendMessage"
     payload = {
@@ -26,8 +26,8 @@ def task_failure_callback(context):
 def task_success_callback(context):
     dag_id = context['dag'].dag_id
     task_id = context['task_instance'].task_id
-    execution_date = context['execution_date']
-    message = f"✅ DAG: {dag_id}\nTask: {task_id}\nDate: {execution_date}\nStatus: SUCCESS"
+    logical_date = context['logical_date']
+    message = f"✅ DAG: {dag_id}\nTask: {task_id}\nDate: {logical_date}\nStatus: SUCCESS"
 
     url = f"https://api.telegram.org/bot{TG_BOT_TOKEN}/sendMessage"
     payload = {
